@@ -15,12 +15,14 @@ m=findmedian(x,y)
 if x%2==0:
   lh=y[0:m]
   uh=y[m:]
+  p=x//2
 elif x%2!=0:
   lh=y[0:m]
   uh=y[m+1:]
+  p=(x-1)//2
 
-q1=findmedian(x//2,lh)
-q3=findmedian(x//2,uh)
+q1=findmedian(p,lh)
+q3=findmedian(p,uh)
 
 iqr=q3-q1
 lb=q1-1.5*iqr
